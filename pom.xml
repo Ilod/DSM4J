@@ -2,17 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.ccenyo</groupId>
-    <artifactId>DSM4J</artifactId>
+    <groupId>org.ilod</groupId>
+    <artifactId>dsm4j</artifactId>
     <version>1.2.2-SNAPSHOT</version>
 
     <description>A java wrapper for Synology DSM API</description>
     <name>DSM for Java</name>
-    <url>https://github.com/ccenyo/DSM4J</url>
+    <url>https://github.com/Ilod/DSM4J</url>
     <licenses>
         <license>
             <name>MIT License</name>
-            <url>https://github.com/ccenyo/DSM4J/blob/master/LICENSE</url>
+            <url>https://github.com/Ilod/DSM4J/blob/master/LICENSE</url>
         </license>
     </licenses>
 
@@ -20,6 +20,10 @@
         <developer>
             <name>Cenyo Medewou</name>
             <email>medewou@gmail.com</email>
+        </developer>
+        <developer>
+            <name>Rudy Pons</name>
+            <email>rudy.pons@ilod.org</email>
         </developer>
     </developers>
     <properties>
@@ -29,18 +33,20 @@
     </properties>
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>github</id>
+            <name>GitHub Ilod Apache Maven Snapshot Packages</name>
+            <url>https://maven.pkg.github.com/Ilod/DSM4J/</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>github</id>
+            <name>GitHub Ilod Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/Ilod/DSM4J/</url>
         </repository>
     </distributionManagement>
     <scm>
-        <connection>scm:git:https://github.com/ccenyo/DSM4J.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/ccenyo/DSM4J.git</developerConnection>
-        <url>https://github.com/ccenyo/DSM4J</url>
+        <connection>scm:git:https://github.com/Ilod/DSM4J.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/Ilod/DSM4J.git</developerConnection>
+        <url>https://github.com/Ilod/DSM4J</url>
       <tag>DSM4J-1.1.0</tag>
   </scm>
     <profiles>
