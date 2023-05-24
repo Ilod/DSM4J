@@ -10,6 +10,7 @@ import requests.filestation.delete.DsmAdvancedDeleteRequest;
 import requests.filestation.delete.DsmSimpleDeleteRequest;
 import requests.filestation.favorite.DsmListFavoriteRequest;
 import requests.filestation.favorite.DsmManageFavoriteRequest;
+import requests.filestation.lists.DsmGetInfoRequest;
 import requests.filestation.lists.DsmListFolderRequest;
 import requests.filestation.lists.DsmSharedFolderRequest;
 import requests.filestation.login.DsmLoginRequest;
@@ -98,6 +99,11 @@ public class DsmFileStationClient {
     public DsmListFolderRequest ls(String folderPath) {
         return new DsmListFolderRequest(dsmAuth)
                     .setFolderPath(folderPath);
+    }
+    
+    public DsmGetInfoRequest getInfo(String path) {
+        return new DsmGetInfoRequest(dsmAuth)
+                    .addTargetPath(path);
     }
 
     /**
