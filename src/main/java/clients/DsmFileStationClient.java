@@ -22,6 +22,7 @@ import requests.filestation.share.DsmShareCreateOrEditRequest;
 import requests.filestation.share.DsmShareDeleteRequest;
 import requests.filestation.share.DsmShareInfoRequest;
 import requests.filestation.share.DsmShareListRequest;
+import requests.filestation.transfert.DsmDownloadAdvancedRequest;
 import requests.filestation.transfert.DsmDownloadRequest;
 import requests.filestation.transfert.DsmUploadRequest;
 import responses.Response;
@@ -31,6 +32,7 @@ import responses.filestation.DsmSimpleResponse;
 import utils.DsmUtils;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Optional;
 
 /**
@@ -155,6 +157,28 @@ public class DsmFileStationClient {
     public DsmDownloadRequest download(String fileOrFolderToDownload, String destinationPath) {
         return new DsmDownloadRequest(dsmAuth)
                 .setFileToDownload(fileOrFolderToDownload)
+                .setDestinationPath(destinationPath);
+    }
+
+    /**
+     * download files
+     * @param fileOrFolderToDownload the path of the file to download
+     * @param output the stream to output the file to
+     * @return DsmAdvancedDownloadRequest
+     */
+    public DsmDownloadAdvancedRequest downloadAdvanced(OutputStream output) {
+        return new DsmDownloadAdvancedRequest(dsmAuth)
+                .setOutputStream(output);
+    }
+
+    /**
+     * download files
+     * @param fileOrFolderToDownload the path of the file to download
+     * @param output the stream to output the file to
+     * @return DsmAdvancedDownloadRequest
+     */
+    public DsmDownloadAdvancedRequest downloadAdvanced(String destinationPath) {
+        return new DsmDownloadAdvancedRequest(dsmAuth)
                 .setDestinationPath(destinationPath);
     }
 
